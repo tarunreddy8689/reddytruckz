@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reddytruckz - Empowering fleet management with seamless technology. Ride the digital wave with our real-time tracking and analytics solutions.">
+    <meta property="og:title" content="Reddytruckz - Fleet Management Solutions">
+    <meta property="og:description" content="Empowering fleet management with seamless technology. Real-time tracking, smart analytics, and predictive maintenance.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    <meta property="og:url" content="https://windsurf-fleet.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Reddytruckz - Fleet Management & Vehicle Tracking Solutions</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Reddytruckz</a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#benefits" class="nav-link">Benefits</a>
+                    <a href="#solutions" class="nav-link">Solutions</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="nav-actions">
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Placeholder sections to load content dynamically -->
+    <main id="home"></main>
+     <section id="solutions"></section>
+    <section id="features"></section>
+    <section id="benefits"></section>
+     <section id="contact"></section>
+    <section id="footer"></section>
+   
+
+    <!-- AOS Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Scripts -->
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS with default settings
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+            
+            // Load sections
+            loadSections();
+        });
+
+        // Function to load sections
+        async function loadSections() {
+            const sections = [
+                { id: 'home', path: 'sections/hero.html' },
+                { id: 'solutions', path: 'sections/solutions.html' },
+                { id: 'features', path: 'sections/features.html' },
+                { id: 'benefits', path: 'sections/benefits.html' },
+                { id: 'contact', path: 'sections/contact.html' },
+                { id: 'footer', path: 'sections/footer.html' }
+            ];
+
+            // Load sections in sequence
+            for (const section of sections) {
+                try {
+                    await loadSection(section.id, section.path);
+                } catch (error) {
+                    console.error(`Error loading ${section.path}:`, error);
+                }
+            }
+            
+    
+            AOS.refresh();
+        }
+
+        // Function to load a single section
+        async function loadSection(id, path) {
+            const container = document.getElementById(id);
+            if (!container) return;
+            
+            try {
+                const response = await fetch(path);
+                if (!response.ok) throw new Error(`Failed to load ${path}: ${response.status}`);
+                
+                const html = await response.text();
+                container.innerHTML = html;
+                
+               
+                if (id === 'home') {
+                    initHeroVideo();
+                }
+                
+                console.log(`Loaded section: ${id}`);
+                return true;
+            } catch (error) {
+                console.error(`Error loading ${path}:`, error);
+                container.innerHTML = `<div class="error">Error loading content. Please refresh the page.</div>`;
+                return false;
+            }
+        }
+        
+        // Initialize hero video
+        function initHeroVideo() {
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                video.muted = true;
+                video.playsInline = true;
+                video.play().catch(error => {
+                    console.log('Video autoplay prevented:', error);
+                    // Add play button or other fallback here
+                });
+            }
+        }
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+

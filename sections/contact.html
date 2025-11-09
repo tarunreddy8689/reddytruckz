@@ -1,0 +1,107 @@
+<!-- contact.html -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Our team is ready to help you transform your fleet operations</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="method-details">
+                            <h4>Email Us</h4>
+                            <p>Our support team is here to help</p>
+                            <a href="Contact@TruckX.com">Contact@TruckX.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="method-details">
+                            <h4>Call Us</h4>
+                            <p>Speak with our sales team</p>
+                            <a href="tel:(650) 600-6007">(650) 600-6007</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="method-details">
+                            <h4>Visit Us</h4>
+                            <p>Our headquarters</p>
+                            <address>9300 Jollyville Rd #107, Austin 78759</address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container" data-aos="fade-left">
+                <div class="form-header">
+                    <h3>Let's Talk About Your Fleet</h3>
+                    <p>Fill out the form and our team will get back to you within 24 hours</p>
+                </div>
+
+                <form id="contact-form" class="contact-form" netlify>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="first-name" name="first-name" placeholder=" " required>
+                            <label for="first-name">First Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="last-name" name="last-name" placeholder=" " required>
+                            <label for="last-name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Business Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder=" ">
+                            <label for="phone">Phone Number (Optional)</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="company" name="company" placeholder=" " required>
+                        <label for="company">Company Name</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="company-size" name="company-size" required>
+                            <option value="" disabled selected></option>
+                            <option value="1-10">1-10 vehicles</option>
+                            <option value="11-50">11-50 vehicles</option>
+                            <option value="51-100">51-100 vehicles</option>
+                            <option value="101-500">101-500 vehicles</option>
+                            <option value="500+">500+ vehicles</option>
+                        </select>
+                        <label for="company-size">Fleet Size</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="interest" name="interest" required>
+                            <option value="" disabled selected></option>
+                            <option value="fleet-tracking">Fleet Tracking</option>
+                            <option value="route-optimization">Route Optimization</option>
+                            <option value="driver-safety">Driver Safety</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="interest">I'm interested in</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                        <label for="message">How can we help you?</label>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="form-note">By submitting this form, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

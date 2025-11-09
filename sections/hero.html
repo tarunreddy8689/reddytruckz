@@ -1,0 +1,48 @@
+<!-- Hero Section with Video Background -->
+<section id="home" class="hero">
+    <!-- Video Background -->
+    <div class="hero-video">
+        <video autoplay muted loop id="heroVideo" playsinline webkit-playsinline data-playsinline>
+            <source src="images/143479-782374009.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <script>
+            // Ensure video plays inline on all devices
+            document.addEventListener('DOMContentLoaded', function() {
+                var video = document.getElementById('heroVideo');
+                if (video) {
+                    video.setAttribute('playsinline', '');
+                    video.setAttribute('webkit-playsinline', '');
+                    video.setAttribute('muted', '');
+                    video.play().catch(function(error) {
+                        // Autoplay was prevented. Show a play button or handle the error.
+                        console.log('Video autoplay was prevented:', error);
+                    });
+                }
+            });
+        </script>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h2 class="hero-title">Transform Your Fleet Operations with <span class="text-gradient">Reddytruckz</span></h2>
+        <p class="hero-subtitle">Optimize routes, reduce costs, and improve efficiency with our AI-powered fleet management platform.</p>
+        <div class="hero-buttons">
+            <a href="https://truckx.com/" class="btn btn-primary btn-lg">
+                <span>Get Started</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="images/Best & most affordable Dashcam subscription only $19-month .GET YOURS TODAY !!!.mp4" class="btn btn-outline btn-lg">
+                <span>Watch Demo</span>
+                <i class="fas fa-play-circle"></i>
+            </a>
+        </div>
+        <div class="trusted-by">
+            <p>Trusted by Companies:</p>
+            <div class="trusted-logos">
+                <h4>Slicon Roadways , Ashok Leyland , New Era TruckX , Mahindra</h4>
+            </div>
+        </div>
+    </div>
+</section>
